@@ -42,11 +42,13 @@ public class OrderItem {
     }
 
     public void setOrder(Order order) {
+        // 주문의 주문 아이템 리스트에 파라미터의 주문을 추가한다.
         this.order = order;
         order.getOrderItemList().add(this);
     }
 
     public void setItem(Item item) {
+        // 주문의 주문된 아이템 리스트에 파라미터의 아이템을 추가한다.
         this.item = item;
         item.getOrderItem().add(this);
     }
@@ -61,4 +63,5 @@ public class OrderItem {
     public void cancel() {
         this.getItem().addStock(count);
     }
+    // 취소했으므로, 해당 수량을 다시 올려준다.
 }
